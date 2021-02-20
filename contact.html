@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css">
+		<link rel="stylesheet" href="style/style.production.css">
+		<link rel="shortcut icon" href="images/iconfinder_pulse-activity-vital-wave-signal_3209448.png">
+		<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@200&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+		<title>Contact page</title>
+	</head>
+	<body>
+		<header class="page-header">
+			<a href="index.html"><img class="logo" src="images/iconfinder_pulse-activity-vital-wave-signal_3209448.png" alt="logo showing waves" class="page-header_item"></a>
+			<nav class="main-navigation topBotomBordersOut page-header_item">
+				<ul role="menubar" class="navigation-list">
+					<li role="presentation">
+						<a href="index.html" role="menuitem" class="navigation-list_item">Home</a>
+					</li>
+					<li role="presentation">
+						<a href="about.html" role="menuitem" class="navigation-list_item">About</a>
+					</li>
+					<li role="presentation">
+						<a href="work.html" role="menuitem" class="navigation-list_item">Work</a>
+				 </li>
+					<li role="presentation">
+						<a href="contact.html" role="menuitem" class="navigation-list_item navigation-list_item-active">Contact</a>
+					</li>
+				</ul>
+			</nav>
+		</header>
+		<main class="main">
+			<div class="contact-details">
+				<h2>My contact details</h2>
+				Email: <a href="mailto:tim0ios@icloud.com">tim0ios@icloud.com</a><br>
+				Phone: <a href="tel:+311234567">tel:+31 1234567</a><br>
+			</div>
+			<div class="contact-form">
+				<h2>Contact form</h2>
+				<form action="#" method="post">
+					<label for="first-name">First name:</label>
+					<input type="text" id="first-name" name="user-first-name" required>
+					<label for="last-name">Last name:</label>
+					<input type="text" id="last-name" name="user-last-name" required><br>
+					<label for="email">Your Email:</label>
+					<input type="email" id="email" name="user-email" required><br>
+					<label for="message">Message:</label><br>
+					<textarea id="message" type="text" name="message" rows="2" cols="40" maxlength="300">
+					</textarea><br>
+					<button type="button" name="button">Contact me</button>
+				</form>
+			</div>
+		</main>
+		<script src="js/tota11y.min.js"></script>
+	</body>
+</html>
