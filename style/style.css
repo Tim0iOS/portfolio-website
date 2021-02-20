@@ -99,13 +99,34 @@ h3 {
 .main {
   margin: 0 var(--standard-gap);
 }
-.main_text, .about_text {
+.main_text {
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
 }
 .about_list {
   list-style-type: none;
+}
+.contact_details {
+  list-style-type: none;
+  margin-bottom: var(--standard-gap);
+}
+.contact_details li {
+  display: inline;
+  margin-left: var(--standard-gap);
+}
+.contact_form {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: var(--standard-gap);
+  margin-bottom: var(--standard-gap);
+}
+input[type=text], input[type=email], textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 #hello-world {
   	font-family: 'Roboto Mono', monospace;
@@ -154,14 +175,6 @@ h3 {
 	flex-direction: column;
 	text-align: center;
 	padding-top: var(--standard-gap);
-}
-table, th, td {
-  border: 1px solid black;
-	text-align: center;
-}
-table {
-	width: 90%;
-	margin: auto auto;
 }
 .button, button {
   border: none;
