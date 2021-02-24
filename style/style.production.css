@@ -1,4 +1,3 @@
-
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -195,8 +194,16 @@ button:focus,
   opacity: 0.6;
 }
 .dot {
-  -webkit-animation: 2s blink infinite;
-          animation: 2s blink infinite;
+  -webkit-animation: 1s blink infinite;
+          animation: 1s blink infinite;
+}
+.dot:nth-child(2) {
+  -webkit-animation-delay: 150ms;
+          animation-delay: 150ms;
+}
+.dot:nth-child(3) {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
 }
 .sun {
   -webkit-animation: 4s color-change infinite alternate linear;
@@ -210,33 +217,46 @@ button:focus,
   -webkit-animation: 34s cloud-move-reverse infinite alternate linear;
           animation: 34s cloud-move-reverse infinite alternate linear;
 }
+@supports (display: grid) {
+ .grid {
+   display: -ms-grid;
+   display: grid;
+   -ms-grid-columns: 1fr var(--standard-gap) 1fr var(--standard-gap) 1fr;
+   grid-template-columns: 1fr 1fr 1fr;
+   grid-gap: var(--standard-gap);
+   margin: 0;
+ }
+  .grid {
+  	display: -ms-grid;
+  	display: grid;
+  	-ms-grid-columns: 1fr var(--standard-gap) 1fr var(--standard-gap) 1fr;
+  	grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: var(--standard-gap);
+  }
+  .grid-item {
+    background-color: var(--grid-color);
+    color: var(--background-color);
+    border-radius: 10px;
+  	width: auto;
+  	min-height: auto;
+  	margin: 0;
+  	padding: var(--standard-gap);
+  }
+  .grid-item:last-child {
+    -ms-grid-column: 3;
+    grid-column: 3 / 3;
+    -ms-grid-row: 1;
+    -ms-grid-row-span: 2;
+    grid-row: 1 / 3;
+  }
+  .grid-item:hover,
+  .grid-item:focus {
+    opacity: 0.9;
+  }
+}
 #hello-world {
   	font-family: 'Roboto Mono', monospace;
     font-weight: var(--font-weight-regular);
-}
-@media all and (max-width: 500px) {
-  .grid {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
-  }
-}
-@media all and (min-width: 500px) and (max-width: 750px){
-  .grid {
-    -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media all and (max-width: 750px) {
-  .grid {
-    grid-gap: 10px;
-  }
-  .grid-item:last-child {
-    grid-column: auto / auto;
-    grid-row: auto / auto;
-  }
-  h1 {
-    font-size: 22px;
-  }
 }
 @-webkit-keyframes blink {
   from {
@@ -254,10 +274,6 @@ button:focus,
     opacity: 1;
   }
 }
-.dot { -webkit-animation: 1s blink infinite; animation: 1s blink infinite }
-.dot:nth-child(2) { -webkit-animation-delay: 250ms; animation-delay: 250ms }
-.dot:nth-child(3) { -webkit-animation-delay: 500ms; animation-delay: 500ms }
-
 @-webkit-keyframes color-change {
   from {
     fill: var(--sun-yellow);
@@ -266,7 +282,6 @@ button:focus,
     fill: var(--sun-red);
   }
 }
-
 @keyframes color-change {
   from {
     fill: var(--sun-yellow);
@@ -315,40 +330,27 @@ button:focus,
             transform: translate(100px, 48px);
   }
 }
-@supports (display: grid) {
- .grid {
-   display: -ms-grid;
-   display: grid;
-   -ms-grid-columns: 1fr var(--standard-gap) 1fr var(--standard-gap) 1fr;
-   grid-template-columns: 1fr 1fr 1fr;
-   grid-gap: var(--standard-gap);
-   margin: 0;
- }
+@media all and (max-width: 500px) {
   .grid {
-  	display: -ms-grid;
-  	display: grid;
-  	-ms-grid-columns: 1fr var(--standard-gap) 1fr var(--standard-gap) 1fr;
-  	grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: var(--standard-gap);
+    -ms-grid-columns: 1fr;
+    grid-template-columns: 1fr;
   }
-  .grid-item {
-    background-color: var(--grid-color);
-    color: var(--background-color);
-    border-radius: 10px;
-  	width: auto;
-  	min-height: auto;
-  	margin: 0;
-  	padding: var(--standard-gap);
+}
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    -ms-grid-columns: 1fr var(--standard-gap) 1fr;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
   }
   .grid-item:last-child {
-    -ms-grid-column: 3;
-    grid-column: 3 / 3;
-    -ms-grid-row: 1;
-    -ms-grid-row-span: 2;
-    grid-row: 1 / 3;
+    grid-column: auto / auto;
+    grid-row: auto / auto;
   }
-  .grid-item:hover,
-  .grid-item:focus {
-    opacity: 0.9;
+  h1 {
+    font-size: 22px;
   }
 }

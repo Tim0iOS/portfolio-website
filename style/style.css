@@ -176,7 +176,13 @@ button:focus,
   opacity: 0.6;
 }
 .dot {
-  animation: 2s blink infinite;
+  animation: 1s blink infinite;
+}
+.dot:nth-child(2) {
+  animation-delay: 150ms;
+}
+.dot:nth-child(3) {
+  animation-delay: 300ms;
 }
 .sun {
   animation: 4s color-change infinite alternate linear;
@@ -186,68 +192,6 @@ button:focus,
 }
 .cloud-back {
   animation: 34s cloud-move-reverse infinite alternate linear;
-}
-#hello-world {
-  	font-family: 'Roboto Mono', monospace;
-    font-weight: var(--font-weight-regular);
-}
-@media all and (max-width: 500px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-@media all and (min-width: 500px) and (max-width: 750px){
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-@media all and (max-width: 750px) {
-  .grid {
-    grid-gap: 10px;
-  }
-  .grid-item:last-child {
-    grid-column: auto / auto;
-    grid-row: auto / auto;
-  }
-  h1 {
-    font-size: 22px;
-  }
-}
-@keyframes blink {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-.dot { animation: 1s blink infinite }
-.dot:nth-child(2) { animation-delay: 250ms }
-.dot:nth-child(3) { animation-delay: 500ms }
-
-@keyframes color-change {
-  from {
-    fill: var(--sun-yellow);
-  }
-  to {
-    fill: var(--sun-red);
-  }
-}
-@keyframes cloud-move {
-  from {
-    transform: translate(0, 50px);
-  }
-  to {
-    transform: translate(200px, 50px);
-  }
-}
-@keyframes cloud-move-reverse {
-  from {
-    transform: translate(446px, 48px);
-  }
-  to {
-    transform: translate(100px, 48px);
-  }
 }
 @supports (display: grid) {
  .grid {
@@ -277,5 +221,63 @@ button:focus,
   .grid-item:hover,
   .grid-item:focus {
     opacity: 0.9;
+  }
+}
+#hello-world {
+  	font-family: 'Roboto Mono', monospace;
+    font-weight: var(--font-weight-regular);
+}
+@keyframes blink {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes color-change {
+  from {
+    fill: var(--sun-yellow);
+  }
+  to {
+    fill: var(--sun-red);
+  }
+}
+@keyframes cloud-move {
+  from {
+    transform: translate(0, 50px);
+  }
+  to {
+    transform: translate(200px, 50px);
+  }
+}
+@keyframes cloud-move-reverse {
+  from {
+    transform: translate(446px, 48px);
+  }
+  to {
+    transform: translate(100px, 48px);
+  }
+}
+@media all and (max-width: 500px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px){
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media all and (max-width: 750px) {
+  .grid {
+    grid-gap: 10px;
+  }
+  .grid-item:last-child {
+    grid-column: auto / auto;
+    grid-row: auto / auto;
+  }
+  h1 {
+    font-size: 22px;
   }
 }
